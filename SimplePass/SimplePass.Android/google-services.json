@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "184592966866",
+    "project_id": "simplepass-3fdce",
+    "storage_bucket": "simplepass-3fdce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184592966866:android:2fba11cf8c57186fc7390b",
+        "android_client_info": {
+          "package_name": "com.delgadillo.simplepass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184592966866-h6ntqfs72ceihu4s9brbiifj6ofc68kl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOKEkjJ1uO10lyeIBI8uAbADjJLQRjPuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184592966866-h6ntqfs72ceihu4s9brbiifj6ofc68kl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

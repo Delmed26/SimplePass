@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePass.Views.CreateAccount"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout >
+            <Path Data="M361.467,1140.441s23.861-16.691,58.476-6.441,93.516-12,93.516-12,97.424-40.056,145.885-15S722,1119,722,1119l.075-164.026H347.029L347,1149Z"
+                  Aspect="Fill"
+                  Fill="#6C51C8"
+                  AbsoluteLayout.LayoutBounds="0,0,1,0.25"
+                  AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+            <Frame CornerRadius="100"
+                   Padding="0"
+                   BackgroundColor="White"
+                   AbsoluteLayout.LayoutBounds="0.95,0.05,30,30"
+                   AbsoluteLayout.LayoutFlags="PositionProportional">
+                <ImageButton Source="round_close_24.xml" Margin="5" BackgroundColor="Transparent" Clicked="Close_Clicked"/>
+            </Frame>
+
+            <StackLayout Spacing="30"
+                         AbsoluteLayout.LayoutBounds="0.5,0.7,300,400"
+                         AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Label Text="Simple password"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       FontFamily="serif"
+                       TextColor="{StaticResource fontColor}"/>
+
+                <Entry BackgroundColor="{StaticResource backgroundEntry}"
+                       Text="{Binding email}"
+                       Placeholder="Correo"/>
+                
+                <Entry BackgroundColor="{StaticResource backgroundEntry}"
+                       IsPassword="True"
+                       Text="{Binding password}"
+                       Placeholder="Contraseña"/>
+
+                <Button Text="Crear sesión"
+                        Clicked="CreateSession_Clicked"
+                        BackgroundColor="{StaticResource principalColor}"
+                        TextColor="White"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="10"
+                         TranslationX="-5"
+                         AbsoluteLayout.LayoutBounds="0.5,0.9,20,10"
+                         AbsoluteLayout.LayoutFlags="PositionProportional">
+
+                <Ellipse Fill="#701F1F1F"
+                         HeightRequest="10"
+                         WidthRequest="10"/>
+
+                <Ellipse Fill="#6C51C8"
+                         HeightRequest="10"
+                         WidthRequest="10"/>
+
+            </StackLayout>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

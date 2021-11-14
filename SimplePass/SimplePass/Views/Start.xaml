@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePass.Views.Start"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource principalColor}">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid RowDefinitions="*"
+                  AbsoluteLayout.LayoutBounds="-0.4,-0.05,300,300"
+                  AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Ellipse Fill="white"
+                         Grid.Row="0"
+                         TranslationX="-10"
+                         TranslationY="-15"
+                         HeightRequest="250"
+                         WidthRequest="250"
+                         AbsoluteLayout.LayoutBounds="-0.3,-0.15,300,300"
+                         AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                <Image x:Name="secureImage"
+                       Grid.Row="0"
+                       AbsoluteLayout.LayoutBounds="-0.2,0,250,250"
+                       AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            </Grid>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.6,0.8,0.3"
+                         AbsoluteLayout.LayoutFlags="All"
+                         Spacing="20">
+                <Label Text="Simple
+                       Password"
+                       FontSize="40"
+                       FontAttributes="Bold"
+                       FontFamily="serif"
+                       TextColor="White"/>
+
+                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                       TextColor="White"
+                       FontSize="Subtitle"
+                       FontAttributes="Bold"
+                       LineBreakMode="WordWrap"/>
+
+                <Button Text="Comenzar"
+                        BackgroundColor="White"
+                        TextColor="{StaticResource fontColor}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="10"
+                         TranslationX="-5"
+                         AbsoluteLayout.LayoutBounds="0.5,0.9,20,10"
+                         AbsoluteLayout.LayoutFlags="PositionProportional">
+
+                <Ellipse Fill="white"
+                         HeightRequest="10"
+                         WidthRequest="10"/>
+
+                <Ellipse Fill="#701F1F1F"
+                         HeightRequest="10"
+                         WidthRequest="10"/>
+
+            </StackLayout>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

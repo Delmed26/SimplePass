@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePass.Views.Login"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource principalColor}">
+
+    <Grid RowDefinitions="8*, Auto">
+        <Frame BackgroundColor="White"
+               Grid.Row="0"
+               CornerRadius="50"
+               TranslationY="-50">
+
+            <StackLayout VerticalOptions="Center"
+                         Spacing="40">
+                <Label Text="Simple password"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       FontFamily="serif"
+                       TextColor="{StaticResource principalColor}"/>
+
+                <Entry BackgroundColor="{StaticResource backgroundEntry}"
+                       Text="{Binding email}"
+                       Placeholder="Correo"/>
+
+                <Entry BackgroundColor="{StaticResource backgroundEntry}"
+                       Text="{Binding password}"
+                       Placeholder="Contraseña"/>
+
+                <Button Text="Iniciar sesión"
+                        Clicked="Login_Clicked"
+                        BackgroundColor="{StaticResource principalColor}"
+                        TextColor="White"/>
+            </StackLayout>
+        </Frame>
+
+        <Button Text="¿Crear una nueva cuenta? Click aquí"
+                Grid.Row="1"
+                TranslationY="-50"
+                Margin="0, 10"
+                FontSize="Small"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                Clicked="CreateAccount_Clicked"
+                VerticalOptions="StartAndExpand"/>
+
+    </Grid>
+
+</ContentPage>
