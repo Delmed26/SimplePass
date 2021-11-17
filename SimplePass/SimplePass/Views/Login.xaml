@@ -8,14 +8,17 @@
     <Grid RowDefinitions="8*, Auto">
         <Frame BackgroundColor="White"
                Grid.Row="0"
+               Padding="0"
                CornerRadius="50"
                TranslationY="-50">
 
             <StackLayout VerticalOptions="Center"
-                         Spacing="40">
-                <Label Text="Simple password"
-                       HorizontalTextAlignment="Center"
-                       FontSize="Title"
+                         Margin="30, 0"
+                         Spacing="30">
+                
+                <Label Text="Simple Pass"
+                       HorizontalTextAlignment="End"
+                       FontSize="Header"
                        FontAttributes="Bold"
                        FontFamily="serif"
                        TextColor="{StaticResource principalColor}"/>
@@ -26,6 +29,7 @@
 
                 <Entry BackgroundColor="{StaticResource backgroundEntry}"
                        Text="{Binding password}"
+                       IsPassword="True"
                        Placeholder="Contraseña"/>
 
                 <Button Text="Iniciar sesión"

@@ -4,6 +4,12 @@
              x:Class="SimplePass.App">
     <Application.Resources>
         <ResourceDictionary>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#6C51C8"/>
+                <Setter Property="BarTextColor" Value="White"   />
+
+            </Style>
             <Color x:Key="principalColor">#6C51C8</Color>
             <Color x:Key="backgroundColor">#FAFAFA</Color>
             <Color x:Key="fontColor">#1F1F1F</Color>

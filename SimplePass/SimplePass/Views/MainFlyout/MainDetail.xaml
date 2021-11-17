@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePass.Views.MainFlyout.MainDetail"
+             Title="Detail">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="round_add_24.xml" Clicked="AddNew_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ListView>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame HasShadow="True"
+                           CornerRadius="10">
+
+                        <Grid RowDefinitions="*,Auto,*,*"
+                              ColumnDefinitions="*,*"
+                              RowSpacing="20">
+                            <Label Text="{Binding site}"
+                                   x:Name="titlePassword"
+                                   HorizontalOptions="Start"
+                                   TextColor="{StaticResource principalColor}"
+                                   FontAttributes="Bold"
+                                   FontSize="Title"/>
+
+                            <BoxView HeightRequest="3"
+                                     Grid.Row="1"
+                                     BindingContext="{Reference titlePassword}"
+                                     WidthRequest="{Binding AnchorX}"
+                                     BackgroundColor="{StaticResource principalColor}"
+                                     TranslationY="-23" />
+
+                            <Label BackgroundColor="{StaticResource backgroundEntry}"
+                                   Grid.Row="2"
+                                   Grid.ColumnSpan="2"
+                                   Text="{Binding email}"/>
+
+                            <Entry BackgroundColor="{StaticResource backgroundEntry}"
+                                   Text="{Binding password}"
+                                   Grid.Row="3"
+                                   Grid.ColumnSpan="2"
+                                   IsReadOnly="True"
+                                   IsPassword="True"
+                                   Placeholder="Contraseña"/>
+                        </Grid>
+
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

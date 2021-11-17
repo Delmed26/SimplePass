@@ -1,5 +1,6 @@
 ﻿using Plugin.FirebaseAuth;
 using SimplePass.Models;
+using SimplePass.Views.MainFlyout;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SimplePass.Views
@@ -18,12 +20,23 @@ namespace SimplePass.Views
         {
             InitializeComponent();
             oUser = new User();
+
+            if(App.userLogged != null)
+                oUser.email = App.userLogged.Email;
+
             this.BindingContext = oUser;
+
         }
 
         private void CreateAccount_Clicked(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
+            if (Navigation.NavigationStack[0] == this)
+            {
+                CreateAccount.isFirstPage = false;
+                Navigation.PushAsync(new CreateAccount());
+            }
+            else
+                Navigation.PopToRootAsync();
         }
 
         private async void Login_Clicked(object sender, EventArgs e)
@@ -32,11 +45,20 @@ namespace SimplePass.Views
             {
                 // TODO: Loading login
 
+                var userInfo = CrossFirebaseAuth.Current.Instance.CurrentUser;
+
                 var user = (User)BindingContext;
 
                 var result = await CrossFirebaseAuth.Current.Instance.SignInWithEmailAndPasswordAsync(user.email, user.password);
 
-                _ = this.DisplayToastAsync( "Hola " + result.User.DisplayName);
+                if (result != null)
+                {
+                    var stack = Navigation.NavigationStack[0];
+
+                    Navigation.InsertPageBefore(new Main(), stack);
+
+                    await Navigation.PopToRootAsync(true);
+                }
 
             }
             catch (Exception ex)
