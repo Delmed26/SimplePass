@@ -38,19 +38,7 @@ namespace SimplePass.Views
                 //Loading
                 User user = (User)BindingContext;
 
-                //using (var sha = new System.Security.Cryptography.SHA256Managed())
-                //{
-                //    byte[] textData = System.Text.Encoding.UTF8.GetBytes(user.password);
-                //    byte[] hash = sha.ComputeHash(textData);
-                //    user.password = BitConverter.ToString(hash).Replace("-", String.Empty);
-                //}
-
                 var result = await CrossFirebaseAuth.Current.Instance.CreateUserWithEmailAndPasswordAsync(user.email, user.password);
-
-                //await CrossCloudFirestore.Current
-                //                         .Instance
-                //                         .Collection("users")
-                //                         .AddAsync(user);
 
                 if (result != null)
                 {

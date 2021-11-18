@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+           x:Class="SimplePass.Views.MainFlyout.PopupAddAccount"
+           Size="350,350">
+
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto"
+          Padding="20"
+          HeightRequest="350"
+          RowSpacing="20">
+
+        <Label Text="Nueva contraseña"
+               HorizontalTextAlignment="Center"
+               TextColor="{StaticResource principalColor}"
+               FontAttributes="Bold"
+               FontSize="Title"/>
+
+        <ImageButton Source="round_delete_24"
+                     xct:IconTintColorEffect.TintColor="Red"
+                     Clicked="Delete_Clicked"
+                     BackgroundColor="Transparent"
+                     HorizontalOptions="EndAndExpand"
+                     Grid.Row="0"/>
+
+
+        <Entry BackgroundColor="{StaticResource backgroundEntry}"
+               Grid.Row="1"
+               Text="{Binding site}"
+               Placeholder="Sitio"/>
+
+        <Entry BackgroundColor="{StaticResource backgroundEntry}"
+               Grid.Row="2"
+               Text="{Binding email}"
+               Placeholder="Correo"/>
+
+        <Entry BackgroundColor="{StaticResource backgroundEntry}"
+               Text="{Binding password}"
+               Grid.Row="3"
+               IsPassword="True"
+               Placeholder="Contraseña"/>
+
+        <Button Text="Guardar"
+                x:Name="btnSave"
+                VerticalOptions="EndAndExpand"
+                Grid.Row="4"
+                BackgroundColor="{StaticResource principalColor}"
+                TextColor="White"/>
+
+    </Grid>
+
+</xct:Popup>

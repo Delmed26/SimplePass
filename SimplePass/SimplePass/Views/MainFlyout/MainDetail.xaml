@@ -8,33 +8,43 @@
         <ToolbarItem IconImageSource="round_add_24.xml" Clicked="AddNew_Clicked"/>
     </ContentPage.ToolbarItems>
 
-    <ListView>
+    <ListView ItemsSource="{Binding observableAccounts, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"
+              HasUnevenRows="True"
+              SelectionMode="None"
+              ItemTapped="ListView_ItemTapped">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <Frame HasShadow="True"
-                           CornerRadius="10">
+                           CornerRadius="10"
+                           Margin="20">
 
-                        <Grid RowDefinitions="*,Auto,*,*"
-                              ColumnDefinitions="*,*"
-                              RowSpacing="20">
+                        <Grid RowDefinitions="*,Auto,Auto,*"
+                              ColumnDefinitions="4*,6*"
+                              RowSpacing="10">
                             <Label Text="{Binding site}"
                                    x:Name="titlePassword"
                                    HorizontalOptions="Start"
                                    TextColor="{StaticResource principalColor}"
                                    FontAttributes="Bold"
                                    FontSize="Title"/>
+                            <!--<ImageButton Source="round_edit_24"
+                                         BackgroundColor="Transparent"
+                                         Clicked="EditAccount_Clicked"
+                                         HorizontalOptions="End"
+                                         Grid.Row="0"
+                                         Grid.Column="1"/>-->
 
                             <BoxView HeightRequest="3"
                                      Grid.Row="1"
-                                     BindingContext="{Reference titlePassword}"
-                                     WidthRequest="{Binding AnchorX}"
                                      BackgroundColor="{StaticResource principalColor}"
-                                     TranslationY="-23" />
+                                     TranslationY="-18" />
 
-                            <Label BackgroundColor="{StaticResource backgroundEntry}"
-                                   Grid.Row="2"
+                            <Label Grid.Row="2"
                                    Grid.ColumnSpan="2"
+                                   FontAttributes="Bold"
+                                   FontSize="Subtitle"
+                                   TextColor="{StaticResource fontColor}"
                                    Text="{Binding email}"/>
 
                             <Entry BackgroundColor="{StaticResource backgroundEntry}"
