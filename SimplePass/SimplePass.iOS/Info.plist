@@ -34,5 +34,7 @@
 	<string>SimplePass</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSFaceIdUsageDescription</key>
+	<string>Para la autenticación con la huella</string>
 </dict>
 </plist>

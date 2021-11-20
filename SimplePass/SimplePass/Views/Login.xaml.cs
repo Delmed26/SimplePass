@@ -1,4 +1,6 @@
-﻿using Plugin.FirebaseAuth;
+﻿using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
+using Plugin.FirebaseAuth;
 using SimplePass.Models;
 using SimplePass.Views.MainFlyout;
 using System;
@@ -26,6 +28,32 @@ namespace SimplePass.Views
 
             this.BindingContext = oUser;
 
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            try
+            {
+                bool hasFingerprint = Preferences.Get("hasFingerprintActivated", false);
+                if (hasFingerprint)
+                {
+                    var result = await CrossFingerprint.Current.AuthenticateAsync(new AuthenticationRequestConfiguration("Iniciar sesión", "Iniciaremos sesión usando tu huella dactilar."));
+                    if (result.Authenticated)
+                    {
+                        var stack = Navigation.NavigationStack[0];
+
+                        Navigation.InsertPageBefore(new Main(), stack);
+
+                        await Navigation.PopToRootAsync(true);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await this.DisplayAlert("Error", $"Error: {ex.Message}\nSource: {ex.Source}", "Cerrar");
+            }
         }
 
         private void CreateAccount_Clicked(object sender, EventArgs e)

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="SimplePass.Views.MainFlyout.Fingerprint"
+           Size="300,300">
+
+    <Grid RowDefinitions="Auto, Auto"
+          Padding="20"
+          HeightRequest="350"
+          RowSpacing="20">
+
+        <Label Text="Huella digital"
+               HorizontalTextAlignment="Center"
+               TextColor="{StaticResource principalColor}"
+               FontAttributes="Bold"
+               FontSize="Title"/>
+
+        <ImageButton Source="round_delete_24"
+                     xct:IconTintColorEffect.TintColor="Red"
+                     Clicked="Delete_Clicked"
+                     BackgroundColor="Transparent"
+                     HorizontalOptions="EndAndExpand"
+                     Grid.Row="0"/>
+
+        <Image Source="round_fingerprint_24"
+               HorizontalOptions="Center"
+               HeightRequest="150"
+               WidthRequest="150"
+               xct:IconTintColorEffect.TintColor="{Binding .}"
+               Grid.Row="1"/>
+
+    </Grid>
+
+</xct:Popup>

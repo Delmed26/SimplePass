@@ -11,6 +11,7 @@
 
             </Style>
             <Color x:Key="principalColor">#6C51C8</Color>
+            <Color x:Key="principalColorDark">#533E99</Color>
             <Color x:Key="backgroundColor">#FAFAFA</Color>
             <Color x:Key="fontColor">#1F1F1F</Color>
             <Color x:Key="backgroundEntry">#EBEBEB</Color>

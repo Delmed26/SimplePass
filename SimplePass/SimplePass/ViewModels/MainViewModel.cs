@@ -1,5 +1,4 @@
-﻿using BiT21.EncryptDecryptLib.IService;
-using Plugin.CloudFirestore;
+﻿using Plugin.CloudFirestore;
 using SimplePass.Models;
 using SimplePass.Services;
 using System;
