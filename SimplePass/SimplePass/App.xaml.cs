@@ -18,7 +18,7 @@ namespace SimplePass
             if (userLogged is null)
                 MainPage = new NavigationPage(new Carousel());
             else
-                MainPage = new NavigationPage(new Login());
+                MainPage = new AppShell();
 
         }
 

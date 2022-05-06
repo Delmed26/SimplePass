@@ -1,4 +1,4 @@
-﻿using Android.Content.PM;
+﻿
 using Plugin.Fingerprint;
 using SimplePass.Models;
 using System;
@@ -21,7 +21,6 @@ namespace SimplePass.Views.MainFlyout
             InitializeComponent();
             FlyoutPage.ListView.SelectionMode = ListViewSelectionMode.None;
             FlyoutPage.ListView.ItemTapped += ListView_ItemTapped;
-            
         }
 
         private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -64,7 +63,7 @@ namespace SimplePass.Views.MainFlyout
                 await Launcher.OpenAsync(new Uri(uri));
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

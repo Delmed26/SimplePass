@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePass.Android", "SimplePass\SimplePass.Android\SimplePass.Android.csproj", "{96ADAC1C-2530-4DDC-89FE-ED69A2A26B34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePass.iOS", "SimplePass\SimplePass.iOS\SimplePass.iOS.csproj", "{4B37FC0C-CF2F-4C1F-AE4A-DE206B4B3FAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePass", "SimplePass\SimplePass\SimplePass.csproj", "{F9F38668-2C19-413D-982E-03C6713DCE50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplePass", "SimplePass\SimplePass\SimplePass.csproj", "{F9F38668-2C19-413D-982E-03C6713DCE50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
